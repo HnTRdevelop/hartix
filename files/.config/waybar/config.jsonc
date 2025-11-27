@@ -65,7 +65,7 @@
         "return-type": "string",
         "exec": "python /home/hntr/.config/waybar/timedate.py",
         "restart-interval": 1,
-        "on-click": "gnome-calendar"
+        "on-click": "uwsm-app -- gnome-calendar"
     },
     "memory": {
         "format": "[ {used:2.1f}GiB/{total:2.1f}GiB]"
@@ -97,13 +97,13 @@
         "format": "[{icon} {volume:3}%]",
         "format-muted": "[ {volume:3}%]",
         "format-icons": ["", "", ""],
-        "on-click": "pwvucontrol"
+        "on-click": "uwsm-app -- pavucontrol"
     },
     "network": {
         "format-wifi": "[ {essid} {signalStrength:3}%]",
         "format-ethernet": "[󰈁 Connected]",
         "format-disconnected": "[󰈂 Disconnected]",
-        "on-click": "nm-connection-editor"
+        "on-click": "uwsm-app -- nmgui"
     },
     "power-profiles-daemon": {
         "format": "[{icon}]",
@@ -155,7 +155,7 @@
     },
     "custom/menu": {
        "format": "[󰣇]",
-       "on-click": "/home/hntr/.config/rofi/launcher/launcher.sh \"small\""
+       "on-click": "uwsm-app -- /home/hntr/.config/rofi/launcher/launcher.sh \"small\""
     },
     "custom/special": {
        "format": "[S]",

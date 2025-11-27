@@ -37,6 +37,7 @@ cp -rf ./files/.icons/ ~/
 cp -rf ./files/.themes/ ~/
 cp -rf ./files/.local/ ~/
 cp -rf ./files/.zprofile ~/
+cp -rf ./files/.zshrc ~/
 
 echo enabling/restarting some things...
 pkill waybar; waybar & disown
