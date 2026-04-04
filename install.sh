@@ -19,7 +19,7 @@ while :; do
 	case "$REPLY" in
 		[Nn]* | "" ) break;;
 		[Yy]* )
-		yay -Sy hyprland hyprpaper hypridle hyprlock kitty nemo nemo-fileroller polkit-gnome copyq firefox waybar dunst gpu-screen-recorder-ui qpwgraph v2rayn easyeffects hyprlock lsp-pluginst-standalone ls-plugins-lv2 ttf-hack-nerd ttf-terminus-nerd ttf-profont-nerd rofi gnome-calculator pavucontrol gedit emote zsh nmgui-bin pypewire wireplumber pypewire-pulse
+		yay -Sy hyprland hyprpaper hypridle hyprlock kitty nemo nemo-fileroller polkit-gnome copyq firefox waybar dunst gpu-screen-recorder-ui qpwgraph v2rayn easyeffects hyprlock lsp-pluginst-standalone ls-plugins-lv2 ttf-hack-nerd ttf-terminus-nerd ttf-profont-nerd rofi gnome-calculator pavucontrol gedit emote zsh pypewire wireplumber pypewire-pulse xdg-desktop-portal-hyprland xdg-desktop-portal
 
 while :; do
     echo "Delete old .config folder? [y/N]"
