@@ -1,0 +1,14 @@
+[sie][Expander#0]
+attack=25
+knee=-6.000125408172607
+mode=0
+release=25
+threshold=-40
+
+[sie][Expander#1]
+attack=0
+bypass=true
+knee=0
+mode=0
+releaseThreshold=0
+threshold=-60

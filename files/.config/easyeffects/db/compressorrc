@@ -1,0 +1,13 @@
+[sie][Compressor#0]
+attack=5
+boostAmount=5.999999046325684
+inputGain=10
+knee=-6.000125408172607
+outputGain=20
+release=119.81024169921875
+threshold=-50.000003814697266
+
+[sie][Compressor#1]
+boostAmount=5.999999523162842
+releaseThreshold=0
+threshold=-45
