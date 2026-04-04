@@ -120,27 +120,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # alias pkexec="pkexec env WAYLAND_DISPLAY="$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" XDG_RUNTIME_DIR=/run/user/0"
 
-function proxy_on {
-    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-    proxy="127.0.0.1:2080"
-    export http_proxy=$proxy \
-           https_proxy=$proxy \
-           ftp_proxy=$proxy \
-           rsync_proxy=$proxy \
-           HTTP_PROXY=$proxy \
-           HTTPS_PROXY=$proxy \
-           FTP_PROXY=$proxy \
-           RSYNC_PROXY=$proxy
-    echo -e "Proxy environment variable created."
-}
-
-function proxy_off {
-    unset http_proxy https_proxy ftp_proxy rsync_proxy \
-          HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY
-    echo -e "Proxy environment variable removed."
-}
-
-function restart {
-	pkill $1
-	$1 & disown
-}
+source ~/.custom_commands

@@ -1,34 +1,38 @@
 #!/bin/bash
 
 echo "|------------------------------------------------------------------------|"
-echo "|        HArch - HnTR hyprland on arch linux installation script         |"
+echo "|       HArtix - HnTR hyprland on artix linux installation script        |"
 echo "|    This script will install and configure everything automatically     |"
 echo "|------------------------------------------------------------------------|"
 
 while :; do
     echo "Proceed? [Y/n]"
     read
-    if [ "$REPLY" = "n" ] || [ "$REPLY" = "N" ]; then
-        echo canceling...
-        exit
-    elif [ "$REPLY" = "Y" ] || [ "$REPLY" = "y" ] || [ "$REPLY" = "" ]; then
-        echo proceeding...
-        break
-    fi
+    case "$REPLY" in
+		[Yy]* | "" ) echo "Proceeding..."; break;;
+		[Nn]* ) echo "Cancelling..."; exit;;
+	esac
 done
+
+while :; do
+	echo "Install requiret packages? [y/N]"
+	case "$REPLY" in
+		[Nn]* | "" ) break;;
+		[Yy]* )
+		yay -Sy hyprland hyprpaper hypridle hyprlock kitty nemo nemo-fileroller polkit-gnome copyq firefox waybar dunst gpu-screen-recorder-ui qpwgraph v2rayn easyeffects hyprlock lsp-pluginst-standalone ls-plugins-lv2 ttf-hack-nerd ttf-terminus-nerd ttf-profont-nerd rofi gnome-calculator pavucontrol gedit emote zsh nmgui-bin pypewire wireplumber pypewire-pulse
 
 while :; do
     echo "Delete old .config folder? [y/N]"
     read
-    if [ "$REPLY" = "n" ] || [ "$REPLY" = "N" ] || [ "$REPLY" = "" ]; then
-        break
-    elif [ "$REPLY" = "Y" ] || [ "$REPLY" = "y" ]; then
-        echo purging .config folder...
+	case "$REPLY" in
+		[Nn]* | "" ) break;;
+		[Yy]* ) 
+		echo purging .config folder...
         for i in $(ls ./files/.config/); do
             rm -rf ~/.config/$i
         done
-        break
-    fi
+        break;;
+    esac
 done
 
 echo copying configuration files...
@@ -47,3 +51,4 @@ pkill dunst; dunst & disown
 echo "hyprland reload: $(hyprctl reload)"
 
 echo All done!
+

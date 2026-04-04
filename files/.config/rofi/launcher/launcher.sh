@@ -1,3 +1,3 @@
 dir="$HOME/.config/rofi/launcher"
 theme=$1
-rofi -show drun -theme "${dir}/${theme}.rasi" -hover-select -run-command "uwsm-app -- {cmd}"
+rofi -show drun -theme "${dir}/${theme}.rasi" -hover-select 

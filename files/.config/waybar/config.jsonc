@@ -10,7 +10,8 @@
     "modules-left": [
         "custom/menu",
         "custom/special",
-        "hyprland/workspaces",
+		"hyprland/workspaces",
+        //"sway/workspaces"
         "hyprland/window"
     ],
     "modules-center": [
@@ -53,6 +54,20 @@
             "default": "0"
         }
     },
+	"sway/workspaces": {
+	    "persistent-workspaces": {
+	        "1": ["DP-1"],
+	        "2": ["DP-1"],
+	        "3": ["DP-1"],
+	        "4": ["DP-1"],
+	        "5": ["DP-1"],
+	        "6": ["DP-1"],
+	        "7": ["DP-1"],
+	        "8": ["DP-1"],
+	        "9": ["DP-1"]
+    	},
+		"format": "[{name}]"
+	},
     "hyprland/window": {
         "format": "[{}]"
     },
@@ -65,7 +80,7 @@
         "return-type": "string",
         "exec": "python /home/hntr/.config/waybar/timedate.py",
         "restart-interval": 1,
-        "on-click": "uwsm-app -- gnome-calendar"
+        "on-click": "if [[ $(pgrep gnome-calendar) != '' ]]; then pkill gnome-calendar; else gnome-calendar; fi"
     },
     "memory": {
         "format": "[ {used:2.1f}GiB/{total:2.1f}GiB]"
@@ -97,13 +112,13 @@
         "format": "[{icon} {volume:3}%]",
         "format-muted": "[ {volume:3}%]",
         "format-icons": ["", "", ""],
-        "on-click": "uwsm-app -- pavucontrol"
+        "on-click": "if [[ $(pgrep pavucontrol) != '' ]]; then pkill pavucontrol; else pavucontrol; fi"
     },
     "network": {
         "format-wifi": "[ {essid} {signalStrength:3}%]",
         "format-ethernet": "[󰈁 Connected]",
         "format-disconnected": "[󰈂 Disconnected]",
-        "on-click": "uwsm-app -- nmgui"
+        "on-click": "if [[ $(pgrep nmgui) != '' ]]; then pkill nmgui; else nmgui; fi"
     },
     "power-profiles-daemon": {
         "format": "[{icon}]",
@@ -155,7 +170,7 @@
     },
     "custom/menu": {
        "format": "[󰣇]",
-       "on-click": "uwsm-app -- /home/hntr/.config/rofi/launcher/launcher.sh \"small\""
+       "on-click": "/home/hntr/.config/rofi/launcher/launcher.sh \"small\""
     },
     "custom/special": {
        "format": "[S]",
