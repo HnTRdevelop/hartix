@@ -9,7 +9,7 @@ export __GL_VRR_ALLOWED=1
 export GTK_THEME=Colloid-Yellow-Dark-Compact-Gruvbox
 
 export GDK_BACKEND=wayland,x11
-export SDL_VIDEODRIVER=wayland,x11
+export SDL_VIDEODRIVER=wayland,x11,windows
 export CLUTTER_BACKEND=wayland
 
 # export QT_STYLE_OVERRIDE=Adwaita-Dark
@@ -39,6 +39,9 @@ export CLUTTER_DEFAULT_FPS=144
 export __GL_SYNC_DISPLAY_DEVICE=DP-0
 
 export PROTON_ENABLE_WAYLAND=0
+export PROTON_USE_NTSYNC=1
+export STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam
+export STEAM_COMPAT_DATA_PATH=~/.proton
 
 export XCURSOR_THEME="Capitaine Cursors (Gruvbox)"
 export XCURSOR_SIZE=24
@@ -54,6 +57,6 @@ if [[ "$(tty)" == "/dev/tty1" ]] then
 	# if uwsm check may-start && uwsm select; then
 	# 	exec uwsm start default
 	# fi
-	exec Hyprland
+	exec start-hyprland
 fi
 

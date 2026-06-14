@@ -24,7 +24,7 @@
     "use_amf_preproc": false,
     "amf_preproc_sigma": 4,
     "amf_preproc_tor": 7,
-    "encoder_quality_preset": 2,
+    "encoder_quality_preset": 0,
     "rate_control_mode": 0,
     "filler_data": false,
     "entropy_coding": 1,
@@ -46,9 +46,9 @@
     "contrast": 0.10000005,
     "saturation": 0.62999994,
     "gamma": 1.0,
-    "sharpening": 0.99999994,
+    "sharpening": 0.9,
     "linux_async_compute": false,
-    "linux_async_reprojection": false,
+    "linux_async_reprojection": true,
     "nvenc_quality_preset": 5,
     "nvenc_tuning_preset": 2,
     "nvenc_multi_pass": 2,
@@ -85,18 +85,11 @@
   "client_connections": {
     "1209.client.local.": {
       "display_name": "Pico 4",
-      "current_ip": "192.168.1.187",
+      "current_ip": null,
       "manual_ips": [
         "192.168.1.187"
       ],
       "trusted": true,
-      "connection_state": "Disconnected"
-    },
-    "1209.client": {
-      "display_name": "Unknown",
-      "current_ip": null,
-      "manual_ips": [],
-      "trusted": false,
       "connection_state": "Disconnected"
     }
   },
@@ -136,7 +129,7 @@
       "bitrate": {
         "gui_collapsed": false,
         "mode": {
-          "ConstantMbps": 175,
+          "ConstantMbps": 200,
           "Adaptive": {
             "gui_collapsed": false,
             "saturation_multiplier": 0.95,
@@ -202,7 +195,7 @@
           "contrast": 0.10000005,
           "saturation": 0.62999994,
           "gamma": 1.0,
-          "sharpening": 0.99999994
+          "sharpening": 0.9
         }
       },
       "max_buffering_frames": 1.0,
@@ -211,7 +204,7 @@
       "encoder_config": {
         "gui_collapsed": false,
         "quality_preset": {
-          "variant": "Speed"
+          "variant": "Quality"
         },
         "enable_vbaq": false,
         "rate_control_mode": {
@@ -275,7 +268,7 @@
           "enable_pre_analysis": false
         },
         "software": {
-          "gui_collapsed": true,
+          "gui_collapsed": false,
           "force_software_encoding": false,
           "thread_count": 0
         }

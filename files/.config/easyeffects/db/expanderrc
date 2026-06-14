@@ -1,9 +1,10 @@
 [sie][Expander#0]
-attack=25
+attack=2.5211727619171143
 knee=-6.000125408172607
 mode=0
-release=25
-threshold=-40
+ratio=3.0393126010894775
+release=50.300621032714844
+threshold=-34.9962272644043
 
 [sie][Expander#1]
 attack=0

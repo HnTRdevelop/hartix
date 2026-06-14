@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "|------------------------------------------------------------------------|"
-echo "|       HArtix - HnTR hyprland on artix linux installation script        |"
+echo "|        HArch - HnTR hyprland on arch linux installation script         |"
 echo "|    This script will install and configure everything automatically     |"
 echo "|------------------------------------------------------------------------|"
 
@@ -16,10 +16,14 @@ done
 
 while :; do
 	echo "Install requiret packages? [y/N]"
+	read
 	case "$REPLY" in
 		[Nn]* | "" ) break;;
 		[Yy]* )
-		yay -Sy hyprland hyprpaper hypridle hyprlock kitty nemo nemo-fileroller polkit-gnome copyq firefox waybar dunst gpu-screen-recorder-ui qpwgraph v2rayn easyeffects hyprlock lsp-pluginst-standalone ls-plugins-lv2 ttf-hack-nerd ttf-terminus-nerd ttf-profont-nerd rofi gnome-calculator pavucontrol gedit emote zsh pypewire wireplumber pypewire-pulse xdg-desktop-portal-hyprland xdg-desktop-portal gnome-calendare gnome-calculator ponymix htop hyprshot hyprpicker
+		yay -Sy hyprland hyprpaper hypridle hyprlock hyprlock kitty nautilus polkit-gnome copyq firefox waybar dunst gpu-screen-recorder-ui qpwgraph v2rayn easyeffects lsp-plugins-standalone lsp-plugins-lv2 ttf-hack-nerd ttf-terminus-nerd ttf-profont-nerd rofi gnome-calculator pavucontrol gedit emote zsh zsh-autocomplete zsh-syntax-highlighting pipewire wireplumber pipewire-pulse xdg-desktop-portal-hyprland xdg-desktop-portal gnome-calendar gnome-calculator ponymix htop hyprshot hyprpicker
+		break;;
+	esac
+done
 
 while :; do
     echo "Delete old .config folder? [y/N]"
@@ -43,12 +47,20 @@ cp -rf ./files/.local/ ~/
 cp -rf ./files/.zprofile ~/
 cp -rf ./files/.zshrc ~/
 
-echo enabling/restarting some things...
-pkill waybar; waybar & disown
-pkill hyprpaper; hyprpaper & disown
-pkill dunst; dunst & disown
-
-echo "hyprland reload: $(hyprctl reload)"
+while :; do
+	echo "Restart services? [Y/n]"
+	read
+	case "$REPLY" in
+		[Yy]* | "" )
+			echo enabling/restarting some things...
+			systemctl --user restart waybar
+			systemctl --user restart hyprpaper
+			systemctl --user restart dunts
+			echo "hyprland reload: $(hyprctl reload)"
+			break;;
+		[Nn]* ) break;;
+	esac
+done
 
 echo All done!
 

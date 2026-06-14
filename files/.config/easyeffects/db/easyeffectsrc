@@ -12,7 +12,7 @@ spectrumShape=area
 inputDevice=alsa_input.usb-3142_fifine_Microphone-00.analog-stereo
 plugins=equalizer#0,expander#0,compressor#0,rnnoise#0,deepfilternet#0
 visiblePage=pluginsPage
-visiblePlugin=compressor#0
+visiblePlugin=rnnoise#0
 
 [StreamOutputs]
 outputDevice=alsa_output.pci-0000_10_00.6.analog-stereo
@@ -22,8 +22,8 @@ visiblePlugin=equalizer#0
 
 [Window]
 autostartOnLogin=true
-height=800
+height=1374
 showNativePluginUi=true
 visiblePage=inputPage
 visiblePipeWirePage=clientsPage
-width=1280
+width=1250

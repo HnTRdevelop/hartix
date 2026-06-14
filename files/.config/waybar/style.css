@@ -1,7 +1,8 @@
 * {
-    font-family: TerminessNerdFontPropo;
+    font-family: HackNerdFontPropo;
+    font-weight: bold;
     color: #EBDBB2;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 window#waybar {
